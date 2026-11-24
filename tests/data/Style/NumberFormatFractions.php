@@ -194,4 +194,54 @@ return [
         7,
         '# ?/?',
     ],
+    'denominator limited to one digit' => [
+        '4 1/3',
+        4.34,
+        '# ?/?',
+    ],
+    'vulgar fraction with denominator limited to one digit' => [
+        '13/3',
+        4.34,
+        '?/?',
+    ],
+    'denominator limited to three digits' => [
+        '3 16/113',
+        3.14159,
+        '# ??/???',
+    ],
+    'denominator limited to two digits' => [
+        '1 1/3',
+        1.333,
+        '# ??/??',
+    ],
+    'one digit denominator from a long decimal' => [
+        '1/8',
+        0.125,
+        '?/?',
+    ],
+    'fraction rounds up to the next integer' => [
+        '3',
+        2.99,
+        '# ?/?',
+    ],
+    'fixed denominator with one decimal digit' => [
+        '4/8',
+        0.5,
+        '# ?/8',
+    ],
+    'fixed denominator with three decimal digits' => [
+        '5 1/8',
+        5.125,
+        '# ???/8',
+    ],
+    'fixed denominator rounds up to the next integer' => [
+        '3',
+        2.99,
+        '# ?/4',
+    ],
+    'fixed denominator rounding up with 0 numerator placeholder' => [
+        '3 0/4',
+        2.99,
+        '0 0/4',
+    ],
 ];

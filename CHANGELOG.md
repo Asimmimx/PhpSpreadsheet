@@ -33,7 +33,7 @@ Some earlier branches remain supported and security fixes are applied to them; i
 
 ### Fixed
 
-- Nothing yet.
+- Fraction number formats limit the denominator to the number of its digit placeholders, as Excel does (4.34 with `# ?/?` is `4 1/3`, not `4 17/50`), and a fixed denominator such as `# ?/8` rounds the value to it instead of giving results like `0/0.8`. [Issue #5138](https://github.com/PHPOffice/PhpSpreadsheet/issues/5138)
 
 ## 2026-11-21 - 5.12.0
 
