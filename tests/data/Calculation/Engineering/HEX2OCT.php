@@ -29,4 +29,5 @@ return [
     [ExcelError::NAN(), 'A', 14],
     [ExcelError::NAN(), 'A', 1],
     ['12', 'A', 2],
+    ['7777777400', 'FFFFFFFF00', 3], // places is ignored for negative numbers
 ];

@@ -24,4 +24,5 @@ return [
     [ExcelError::NAN(), '37777777770'], // too many digits
     ['1FFFFFFF', '3777777777'], // highest positive
     ['FFE0000000', '4000000000'], // lowest negative
+    ['FFFFFFFF5B', '7777777533', 3], // places is ignored for negative numbers
 ];

@@ -35,4 +35,5 @@ return [
     [ExcelError::NAN(), 259, 14],
     [ExcelError::NAN(), 259, 1],
     ['103', 259, 3],
+    ['FFFFFFFFCA', '-54', 2], // places is ignored for negative numbers
 ];

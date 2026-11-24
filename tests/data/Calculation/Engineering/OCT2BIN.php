@@ -28,4 +28,5 @@ return [
     [ExcelError::NAN(), 12, 14],
     [ExcelError::NAN(), 12, 3],
     ['1010', 12, 4],
+    ['1000000000', '7777777000', 3], // places is ignored for negative numbers
 ];

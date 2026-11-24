@@ -157,9 +157,11 @@ class ConvertOctal extends ConvertBase
         }
 
         $hexVal = strtoupper(dechex((int) self::toDecimal($value)));
-        $hexVal = (PHP_INT_SIZE === 4 && strlen($value) === 10 && $value[0] >= '4') ? "FF{$hexVal}" : $hexVal;
+        $isNegative = strlen($value) === 10 && $value[0] >= '4';
+        $hexVal = (PHP_INT_SIZE === 4 && $isNegative) ? "FF{$hexVal}" : $hexVal;
 
-        return self::nbrConversionFormat($hexVal, $places);
+        // Excel ignores places for negative numbers and returns all 10 characters
+        return self::nbrConversionFormat($hexVal, $isNegative ? null : $places);
     }
 
     protected static function validateOctal(string $value): string

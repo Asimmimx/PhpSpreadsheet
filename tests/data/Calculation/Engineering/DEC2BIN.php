@@ -31,4 +31,6 @@ return [
     [ExcelError::NAN(), 3, 14],
     [ExcelError::NAN(), 3, 1],
     ['11', 3, 2],
+    ['1110011100', '-100', 3], // places is ignored for negative numbers
+    [ExcelError::VALUE(), '-100', 'ABC'], // but must still be valid
 ];

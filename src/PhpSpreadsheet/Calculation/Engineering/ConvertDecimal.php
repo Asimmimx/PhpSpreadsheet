@@ -68,7 +68,8 @@ class ConvertDecimal extends ConvertBase
         // Two's Complement
         $r = substr($r, -10);
 
-        return self::nbrConversionFormat($r, $places);
+        // Excel ignores places for negative numbers and returns all 10 characters
+        return self::nbrConversionFormat($r, ($value < 0) ? null : $places);
     }
 
     /**
@@ -123,7 +124,8 @@ class ConvertDecimal extends ConvertBase
         $r = strtoupper(dechex((int) $value));
         $r = self::hex32bit($value, $r);
 
-        return self::nbrConversionFormat($r, $places);
+        // Excel ignores places for negative numbers and returns all 10 characters
+        return self::nbrConversionFormat($r, ($value < 0) ? null : $places);
     }
 
     public static function hex32bit(float $value, string $hexstr, bool $force = false): string
@@ -199,7 +201,8 @@ class ConvertDecimal extends ConvertBase
         $r = decoct($value);
         $r = substr($r, -10);
 
-        return self::nbrConversionFormat($r, $places);
+        // Excel ignores places for negative numbers and returns all 10 characters
+        return self::nbrConversionFormat($r, ($value < 0) ? null : $places);
     }
 
     protected static function validateDecimal(string $value): string
